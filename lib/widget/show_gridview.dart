@@ -36,19 +36,20 @@ class _ShowGridViewState extends State<ShowGridView> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(height: 15),
             WidgetImageNetwork(urlImage: widget.demoModels[index].url),
             SizedBox(
-              width: 80,
+              width: 75,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Icon(
                     Icons.star_border_outlined,
-                    color: Colors.grey,
+                    color: Colors.black,
                   ),
                   WidgetText(
                       data: widget.demoModels[index].star.toString()),
-                  WidgetImage(path: 'images/profile.png',size: 24,),
+                  WidgetImage(path: 'images/comment.png',size: 24,),
                 ],
               ),
             ),

@@ -74,7 +74,7 @@ class ProfileBody extends StatelessWidget {
 
   WidgetIconButton methodSignOut(BuildContext context) {
     return WidgetIconButton(
-      iconData: Icons.settings_outlined,
+      iconData: Icons.settings_outlined, color: Colors.black,
       pressFunc: () {
         AppDialog(context: context).normalDialog(
           title: 'SignOut ?',

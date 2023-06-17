@@ -46,10 +46,10 @@ class _DiscoverBodyState extends State<DiscoverBody> {
                           marginTop: 0,
                           label: 'Search',
                           changeFunc: (p0) {},
-                          prefixWidget: Icon(Icons.search),
+                          prefixWidget: Icon(Icons.search, color: Colors.grey,),
                         ),
                         WidgetIconButton(
-                          iconData: Icons.photo_camera_outlined,
+                          iconData: Icons.photo_camera_outlined,color: Colors.black,
                           pressFunc: () {},
                         )
                       ],
