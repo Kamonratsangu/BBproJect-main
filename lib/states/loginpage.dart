@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterstylehint/screens/signup_screen.dart';
 import 'package:flutterstylehint/states/main_home.dart';
 import 'package:flutterstylehint/widget/apple_button.dart';
 import 'package:flutterstylehint/widget/instagram_button.dart';
@@ -20,15 +21,32 @@ class LoginPage extends StatelessWidget {
           children: [
             _buildHeadImage(),
             _buildHeadDetails(),
-            AppleButton(onTap: () {}),
+            // AppleButton(onTap: () {}),
+            // SizedBox(
+            //   height: 15,
+            // ),
+            InstagramButton(onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SignupScreen(),
+                ),
+              );
+            }),
             SizedBox(
               height: 15,
             ),
-            InstagramButton(onTap: () {}),
+            UniqloButton(onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SignupScreen(),
+                ),
+              );
+            }),
             SizedBox(
-              height: 15,
+              height: 10,
             ),
-            UniqloButton(onTap: () {}),
             TextButton(
               onPressed: () {
                 Get.offAll(const MainHome());
@@ -42,8 +60,16 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
             ),
-            WidgetText(data: 'Current Region: Thailand'),
-            SizedBox(height: 32,),
+            SizedBox(
+              height: 5,
+            ),
+            // WidgetText(data: 'Current Region: Thailand'),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.grey[50],
+              ),
+              child: Text('Current Region: Thailand'),
+            ),
           ],
         ),
       ),
@@ -56,7 +82,7 @@ class LoginPage extends StatelessWidget {
       height: 440,
       child: Image.asset(
         'images/loginstylehint.jpg',
-        fit: BoxFit.fitWidth,
+        fit: BoxFit.cover,
       ),
     );
   }

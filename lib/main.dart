@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutterstylehint/bodys/signup_page.dart';
 import 'package:flutterstylehint/states/loginpage.dart';
 import 'package:flutterstylehint/states/main_home.dart';
 import 'package:flutterstylehint/utility/app_service.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       home: const LoginPage(),
+      // home: FormApp(),
       theme: ThemeData(
         useMaterial3: true,
         // colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.deepOrange),
