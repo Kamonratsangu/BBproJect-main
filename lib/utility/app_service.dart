@@ -18,6 +18,70 @@ import '../model/post_model.dart';
 class AppService {
   AppController appController = Get.put(AppController());
 
+  Future<void> get_all() async {
+    if (appController.demoModels.isNotEmpty) {
+      appController.demoModels.clear();
+    }
+
+    FirebaseFirestore.instance.collection('womencategory').get().then((value) {
+      for (var element in value.docs) {
+        DemoModel demoModel = DemoModel.fromMap(element.data());
+        appController.demoModels.add(demoModel);
+      }
+    });
+    FirebaseFirestore.instance.collection('mencategory').get().then((value) {
+      for (var element in value.docs) {
+        DemoModel demoModel = DemoModel.fromMap(element.data());
+        appController.demoModels.add(demoModel);
+      }
+    });
+    FirebaseFirestore.instance.collection('kidcategory').get().then((value) {
+      for (var element in value.docs) {
+        DemoModel demoModel = DemoModel.fromMap(element.data());
+        appController.demoModels.add(demoModel);
+      }
+    });
+  }
+
+  Future<void> get_womencategory() async {
+    if (appController.demoModels.isNotEmpty) {
+      appController.demoModels.clear();
+    }
+
+    FirebaseFirestore.instance.collection('womencategory').get().then((value) {
+      for (var element in value.docs) {
+        DemoModel demoModel = DemoModel.fromMap(element.data());
+        appController.demoModels.add(demoModel);
+      }
+    });
+  }
+
+  Future<void> get_mencategory() async {
+    if (appController.demoModels.isNotEmpty) {
+      appController.demoModels.clear();
+    }
+
+    FirebaseFirestore.instance.collection('mencategory').get().then((value) {
+      for (var element in value.docs) {
+        DemoModel demoModel = DemoModel.fromMap(element.data());
+        appController.demoModels.add(demoModel);
+      }
+    });
+  }
+
+  Future<void> get_kidcategory() async {
+    if (appController.demoModels.isNotEmpty) {
+      appController.demoModels.clear();
+    }
+
+    FirebaseFirestore.instance.collection('kidcategory').get().then((value) {
+      for (var element in value.docs) {
+        DemoModel demoModel = DemoModel.fromMap(element.data());
+        appController.demoModels.add(demoModel);
+      }
+    });
+  }
+
   Future<void> readCatigory() async {
     if (appController.catigoryModels.isNotEmpty) {
       appController.catigoryModels.clear();

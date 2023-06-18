@@ -9,6 +9,7 @@ class SignupScreen extends StatefulWidget {
 }
 
 class _SignupScreenState extends State<SignupScreen> {
+  final nicknameController = TextEditingController();
   String dropdownvalue = 'Male';
   bool isChecked = false;
 
@@ -118,7 +119,8 @@ class _SignupScreenState extends State<SignupScreen> {
                     ],
                   ),
                   TextField(
-                    decoration: InputDecoration(
+                    controller: nicknameController,
+                    decoration: const InputDecoration(
                       enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
                           width: 1,
@@ -217,7 +219,9 @@ class _SignupScreenState extends State<SignupScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const HelloScreen(),
+                              builder: (context) => HelloScreen(
+                                nickname: nicknameController.text,
+                              ),
                             ),
                           );
                         },
